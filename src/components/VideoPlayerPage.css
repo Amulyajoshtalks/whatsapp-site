@@ -1,0 +1,8 @@
+.video-container {
+    width: 1205px;
+    height: 705px;
+    position: absolute;
+    top: 210px;
+    left: 118px;
+    border-radius: 15px;
+}
