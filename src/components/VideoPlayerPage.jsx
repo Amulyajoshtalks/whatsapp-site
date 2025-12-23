@@ -3,18 +3,13 @@ import { useLocation, useNavigate } from "react-router-dom";
 import "../../src/components/VideoPlayerPage.css";
 import ASSETS_PATHS from '../storiesAssets';
 import { useEffect } from "react";
-import whatsappLogo from "../assets/StoriesImageAssets/Video Player Page Logo.png";
-import whatsappLogoMobile from "../assets/whatsappLogo.png";
+// Navbar is provided by Layout; this page should not render its own header.
 
 
 const VideoPlayerPage = () => {
 
   useEffect(() => {
     window.scrollTo(0, 0);
-    const headerElement = document.getElementById("main-header");
-    if (headerElement) {
-      headerElement.classList.add("hidden");
-    }
     const footerElement = document.getElementById("main-footer");
     if (footerElement) {
       footerElement.classList.add("!hidden");
@@ -45,31 +40,20 @@ const VideoPlayerPage = () => {
   return (
 
     <div className="min-h-screen bg-white flex flex-col">
-      {/* Top Bar */}
-      <div className="bg-[#103928] h-[80px] md:h-[106px] text-white flex justify-between items-center px-4 md:px-6 py-4">
-        <div className="w-full flex justify-between items-center mx-auto pl-1 md:pl-2 md:pr-6">
+      {/* Back row (below the main Navbar) */}
+      <div className="w-full flex justify-center px-4 md:px-6 pt-4 md:pt-6">
+        <div className="w-full max-w-[1205px]">
           <button
             onClick={() => navigate(-1)}
-            className="font-normal text-[12px] md:text-[26px] leading-[100%] tracking-[0] align-middle font-['Helvetica_Neue'] flex items-center gap-1"
+            className="text-[#103928] hover:text-black transition font-normal text-[12px] md:text-[22px] leading-[100%] tracking-[0] font-['Helvetica_Neue'] flex items-center gap-2"
           >
             <img
               src={ASSETS_PATHS.nextCorousalImage}
               alt="Back Arrow"
-              className="w-4 h-4 md:w-6 md:h-6 transform -scale-x-100 filter invert brightness-0"
-            /> <div>{video.backToSuccessStories}</div>
+              className="w-4 h-4 md:w-6 md:h-6 transform -scale-x-100"
+            />
+            <span>{video.backToSuccessStories}</span>
           </button>
-          <img
-            src={whatsappLogoMobile}
-            alt="WhatsApp Logo"
-            className="block md:hidden h-5 sm:h-10"
-          />
-
-          {/* Desktop Logo */}
-          <img
-            src={whatsappLogo}
-            alt="WhatsApp Logo"
-            className="hidden md:block h-12"
-          />
         </div>
       </div>
 

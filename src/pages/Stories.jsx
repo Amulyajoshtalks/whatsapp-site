@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect, useRef, useState } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
 import ASSETS_PATHS from "../storiesAssets";
 import VideoGallery from "../components/VideoGallery";
 import { useLanguage } from '../context/LanguageContext';
@@ -8,6 +9,9 @@ const Stories = () => {
 
   const { selectedLang } = useLanguage();
   const filterOptions = translations[selectedLang]?.filterOptions || translations['English'].filterOptions;
+  const navigate = useNavigate();
+  const location = useLocation();
+  const autoOpenedRef = useRef(false);
 
 
   useEffect(() => {
@@ -32,11 +36,43 @@ const Stories = () => {
 
   const [selectedCategory, setSelectedCategory] = useState('all');
 
+  // If user came from Home slider, auto-open the matching success story (serial-wise).
+  useEffect(() => {
+    const autoOpenIndex = location.state?.autoOpenIndex;
+    if (autoOpenedRef.current) return;
+    if (autoOpenIndex === undefined || autoOpenIndex === null) return;
+
+    const items =
+      translations[selectedLang]?.items || translations["English"].items || [];
+    if (!items.length) return;
+
+    const safeIndex = Math.max(0, Math.min(Number(autoOpenIndex) || 0, items.length - 1));
+    const video = items[safeIndex];
+    if (!video) return;
+
+    autoOpenedRef.current = true;
+
+    // Remove state from the /success-stories history entry to avoid auto-open on back.
+    navigate("/success-stories", { replace: true, state: {} });
+
+    // Then open the video player like clicking the card.
+    setTimeout(() => {
+      navigate("/video-player", { state: { video } });
+    }, 0);
+  }, [location.state, navigate, selectedLang]);
+
   return (
     <div className="px-4 py-10 max-w-7xl mx-auto">
       {/* Hero Banner */}
       <div className="w-full max-w-[1288px] md:top-[50px] h-[163px] sm:h-[590px] rounded-[10px] sm:rounded-[30px] overflow-hidden mb-10 relative bg-gray-200 flex items-center justify-center">
-        <img src={ASSETS_PATHS.background} alt="Success Story Hero" className="absolute inset-0 w-full h-full object-cover opacity-70" />
+        <img
+          src={ASSETS_PATHS.background}
+          alt="Success Story Hero"
+          className="absolute inset-0 w-full h-full object-cover opacity-70"
+          loading="eager"
+          decoding="async"
+          fetchPriority="high"
+        />
         <div className="absolute inset-0 bg-black/40" />
         <div className="relative z-2 flex flex-col items-start justify-end h-full pl-4 sm:pl-8 md:pl-20 pb-2 md:pb-16 w-full">
           <h2

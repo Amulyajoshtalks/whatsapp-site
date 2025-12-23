@@ -494,8 +494,12 @@ const WhatsappBanner = () => {
             src={MontageCover}
             alt="Whatsapp Banner"
             className="w-full h-[200px] xs:h-[300px] sm:h-[400px] md:h-[480px] lg:h-[680px] xl:h-[680px] object-cover"
-            style={{ aspectRatio: "2.35/1", filter: "blur(2px)", opacity: 0.9 }}
+            loading="eager"
+            decoding="async"
+            fetchpriority="high"
+            style={{ aspectRatio: "2.35/1" }}
           />
+          <div className="absolute inset-0 bg-black/35" />
           <h2
             className="absolute inset-0 flex items-center justify-center text-white text-lg xs:text-xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-normal"
             style={{
@@ -531,6 +535,8 @@ const WhatsappBanner = () => {
             src={t.video}
             muted={false}
             playsInline
+            preload="metadata"
+            poster={MontageCover}
             className="w-full h-[200px] xs:h-[300px] sm:h-[400px] md:h-[480px] lg:h-[680px] xl:h-[680px] object-fill"
             style={{ aspectRatio: "2.35/1", cursor: "pointer" }}
             onClick={togglePlayback}

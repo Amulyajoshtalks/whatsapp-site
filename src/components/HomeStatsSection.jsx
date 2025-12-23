@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import styled from "styled-components";
+import { useNavigate } from "react-router-dom";
 import arrowIcon from "../assets/arrowIcon.png";
 import hoverIcon2 from "../assets/hoverIcon2.png";
 import pic1 from "../assets/sliderImages/pic1.jpg";
@@ -165,10 +166,15 @@ const SlideImg = styled.img`
 
 const HomeStatsSection = () => {
   const [current, setCurrent] = useState(0);
+  const navigate = useNavigate();
   const { selectedLang } = useLanguage();
   const t =
     homePageTranslations[selectedLang] || homePageTranslations["English"];
   const [hovered, setHovered] = useState("");
+
+  const handleSlideClick = (index) => {
+    navigate("/success-stories", { state: { autoOpenIndex: index } });
+  };
 
   const next = () => {
     if (current < images.length - 1) {
@@ -244,8 +250,24 @@ const HomeStatsSection = () => {
         <CarouselContainer>
           <Slides current={current}>
             {images.map((img, idx) => (
-              <Slide key={idx} active={idx === current}>
-                <SlideImg src={img} alt={`Slide ${idx}`} />
+              <Slide
+                key={idx}
+                active={idx === current}
+                role="button"
+                tabIndex={0}
+                aria-label={`Open success story ${idx + 1}`}
+                onClick={() => handleSlideClick(idx)}
+                onKeyDown={(e) => {
+                  if (e.key === "Enter" || e.key === " ") handleSlideClick(idx);
+                }}
+                style={{ cursor: "pointer" }}
+              >
+                <SlideImg
+                  src={img}
+                  alt={`Slide ${idx + 1}`}
+                  loading={idx === current ? "eager" : "lazy"}
+                  decoding="async"
+                />
               </Slide>
             ))}
           </Slides>

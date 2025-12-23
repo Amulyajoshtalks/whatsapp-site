@@ -301,6 +301,8 @@ const DelayAnimationImages = () => {
         <img
           src={Shoedoctorlogo}
           alt="WhatsApp Bubble"
+          loading="lazy"
+          decoding="async"
           style={{
             width: "clamp(140px, 20vw, 300px)",
             height: "auto",
@@ -311,12 +313,19 @@ const DelayAnimationImages = () => {
       </BadgeWrapper>
 
       {/* Main Image */}
-      <StyledImage src={ShoeDoctorMain} alt="Shoe Doctor at work" />
+      <StyledImage
+        src={ShoeDoctorMain}
+        alt="Shoe Doctor at work"
+        loading="lazy"
+        decoding="async"
+      />
 
       <ProductCardWrapper show={showProduct}>
         <img
           src={Catalogue}
           alt="WhatsApp Bubble"
+          loading="lazy"
+          decoding="async"
           style={{
             width: "clamp(140px, 20vw, 300px)",
             height: "auto", // maintain aspect ratio
@@ -332,6 +341,8 @@ const DelayAnimationImages = () => {
         <img
           src={whatsappBubble}
           alt="WhatsApp Bubble"
+          loading="lazy"
+          decoding="async"
           style={{
             width: "clamp(140px, 20vw, 300px)",
             height: "auto", // maintain aspect ratio

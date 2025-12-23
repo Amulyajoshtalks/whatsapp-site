@@ -1,245 +1,3 @@
-// import { useState } from "react";
-// import { Link } from "react-router-dom";
-// import Select from "react-select";
-// import whatsappLogo from "../assets/whatsappLogo.png";
-// import { useAudio } from "../context/AudioContext";
-// import { useLanguage } from "../context/LanguageContext";
-// import { homePageTranslations } from "../utils/homePageTranslations";
-
-// const navLinkStyle = {
-//   fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif",
-//   fontWeight: 500,
-//   fontSize: "26px",
-//   lineHeight: "100%",
-//   letterSpacing: "0%",
-//   textAlign: "center",
-//   transition: "color 0.2s",
-// };
-
-// const navLinkStyleMobile = {
-//   fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif",
-//   fontWeight: 400,
-//   fontSize: "1.125rem",
-//   lineHeight: "100%",
-//   letterSpacing: "0%",
-//   textAlign: "center",
-//   transition: "color 0.2s",
-// };
-
-// const customSelectStyles = {
-//   control: (base, state) => ({
-//     ...base,
-//     backgroundColor: "transparent",
-//     borderColor: "white",
-//     borderWidth: "2px",
-//     borderRadius: "9999px",
-//     minHeight: "45px",
-//     minWidth: "160px",
-//     paddingLeft: "0.5rem",
-//     paddingRight: "1.5rem",
-//     fontSize: "1.125rem",
-//     fontWeight: "600",
-//     color: "white",
-//     boxShadow: "none",
-//     cursor: "pointer",
-//     "&:hover": {
-//       borderColor: "#25D366",
-//     },
-//   }),
-//   singleValue: (base) => ({
-//     ...base,
-//     color: "white",
-//   }),
-//   dropdownIndicator: (base) => ({
-//     ...base,
-//     color: "white",
-//     padding: 0,
-//   }),
-//   indicatorSeparator: () => ({
-//     display: "none",
-//   }),
-//   menu: (base) => ({
-//     ...base,
-//     backgroundColor: "#103928",
-//     borderRadius: "12px",
-//     overflow: "hidden",
-//     zIndex: 9999,
-//   }),
-//   option: (base, state) => ({
-//     ...base,
-//     backgroundColor:
-//       state.isFocused || state.isSelected ? "#25D366" : "#103928",
-//     color: state.isFocused || state.isSelected ? "#111" : "#fff",
-//     cursor: "pointer",
-//     fontWeight: 500,
-//     padding: "10px 12px",
-//   }),
-// };
-
-// const Navbar = ({ languages }) => {
-//   const { selectedLang, setSelectedLang } = useLanguage();
-
-//   const { setShowIcon } = useAudio();
-//   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-
-//   const t =
-//     homePageTranslations[selectedLang] || homePageTranslations["English"];
-
-//   const langOptions = languages.map((lang) => ({ value: lang, label: lang }));
-
-//   const handleSelectedLangChange = (selectedOption) => {
-//     setSelectedLang(selectedOption);
-//     setShowIcon(true);
-//   };
-
-//   return (
-//     <>
-//       <header
-//         id="main-header"
-//         className="bg-[#103928] w-full px-0 py-8 flex items-center shadow-[0_4px_0_0_rgba(255,255,255,0.8)] border-b-2 border-white z-10"
-//         style={{
-//           boxShadow: "0px 4px 10px 0px #000000",
-//           position: "relative",
-//         }}
-//       >
-//         <div
-//           className="flex w-full items-center justify-between relative"
-//           style={{
-//             maxWidth: "1920px",
-//             margin: "auto",
-//             padding: "0px",
-//           }}
-//         >
-//           {/* Logo */}
-//           <div className="flex items-center min-w-[120px] pl-6 md:pl-16">
-//             <Link to="/">
-//               <img
-//                 src={whatsappLogo}
-//                 alt="WhatsApp Logo"
-//                 className="h-8 md:h-12"
-//               />
-//             </Link>
-//           </div>
-
-//           {/* Desktop Nav */}
-//           <div
-//             className="hidden md:flex justify-end gap-24 w-[60%]"
-//             style={{ paddingRight: "4rem" }}
-//           >
-//             <div className="flex items-center">
-//               <Link
-//                 to="/"
-//                 className="text-white hover:text-[#25D366]"
-//                 style={navLinkStyle}
-//               >
-//                 {t.Home}
-//               </Link>
-//             </div>
-//             <div className="flex items-center">
-//               <Link
-//                 to="/success-stories"
-//                 className="text-white hover:text-[#25D366]"
-//                 style={navLinkStyle}
-//               >
-//                 {t.SuccessStories}
-//               </Link>
-//             </div>
-
-//             {/* Desktop Language Selector */}
-//             <div className="flex items-center">
-//               <div
-//                 className="relative w-fit"
-//                 style={{ minWidth: "160px", minHeight: "45px !important" }}
-//               >
-//                 <Select
-//                   options={langOptions}
-//                   value={{ value: selectedLang, label: selectedLang }}
-//                   onChange={(selectedOption) =>
-//                     setSelectedLang(selectedOption.value)
-//                   }
-//                   styles={customSelectStyles}
-//                   isSearchable={false}
-//                 />
-//               </div>
-//             </div>
-//           </div>
-
-//           {/* Hamburger for Mobile */}
-//           <button
-//             className="md:hidden pr-6"
-//             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-//             aria-label="Open menu"
-//           >
-//             <svg
-//               width="48"
-//               height="48"
-//               fill="none"
-//               stroke="#fff"
-//               strokeWidth="4"
-//             >
-//               <line x1="8" y1="14" x2="40" y2="14" />
-//               <line x1="8" y1="24" x2="40" y2="24" />
-//               <line x1="8" y1="34" x2="40" y2="34" />
-//             </svg>
-//           </button>
-
-//           {/* Mobile Menu */}
-//           {mobileMenuOpen && (
-//             <div
-//               className="md:hidden absolute top-full right-0 w-64 max-w-[90vw] bg-[#103928] z-30 flex flex-col py-6 px-6 gap-6 border border-white rounded-b-xl shadow-lg"
-//               style={{
-//                 borderTopLeftRadius: 0,
-//                 borderTopRightRadius: 0,
-//               }}
-//             >
-//               <Link
-//                 to="/"
-//                 className="text-white text-lg"
-//                 style={navLinkStyleMobile}
-//                 onClick={() => setMobileMenuOpen(false)}
-//               >
-//                 {t.Home}
-//               </Link>
-//               <Link
-//                 to="/success-stories"
-//                 className="text-white text-lg"
-//                 style={navLinkStyleMobile}
-//                 onClick={() => setMobileMenuOpen(false)}
-//               >
-//                 {t.SuccessStories}
-//               </Link>
-//               <div className="relative w-full">
-//                 <Select
-//                   options={langOptions}
-//                   value={{ value: selectedLang, label: selectedLang }}
-//                   onChange={(selectedOption) =>
-//                     handleSelectedLangChange(selectedOption.value)
-//                   }
-//                   onMenuOpen={() => {
-//                     setShowIcon(false);
-//                   }}
-//                   styles={{
-//                     ...customSelectStyles,
-//                     control: (base, state) => ({
-//                       ...customSelectStyles.control(base, state),
-//                       padding: "8px 16px",
-//                       fontWeight: 400,
-//                     }),
-//                   }}
-//                   isSearchable={false}
-//                 />
-//               </div>
-//             </div>
-//           )}
-//         </div>
-//       </header>
-//     </>
-//   );
-// };
-
-// export default Navbar;
-
-
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import Select from "react-select";
@@ -249,51 +7,61 @@ import { useLanguage } from "../context/LanguageContext";
 import { homePageTranslations } from "../utils/homePageTranslations";
 
 const navLinkStyle = {
-  fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif",
+  fontFamily: "'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif",
   fontWeight: 500,
-  fontSize: "26px",
-  lineHeight: "100%",
+  fontSize: "1.1rem",
+  lineHeight: "1.2",
+  letterSpacing: "-0.01em",
   textAlign: "center",
-  transition: "color 0.2s",
+  transition: "all 0.3s cubic-bezier(0.4, 0, 0.2, 1)",
+  position: "relative",
 };
 
 const navLinkStyleMobile = {
-  fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif",
-  fontWeight: 400,
-  fontSize: "1.125rem",
-  lineHeight: "100%",
+  fontFamily: "'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif",
+  fontWeight: 500,
+  fontSize: "1.25rem",
+  lineHeight: "1.4",
+  letterSpacing: "-0.01em",
   textAlign: "center",
-  transition: "color 0.2s",
+  transition: "all 0.3s ease",
 };
 
 const customSelectStyles = {
   control: (base, state) => ({
     ...base,
     backgroundColor: "transparent",
-    borderColor: "white",
+    borderColor: "rgba(255, 255, 255, 0.7)",
     borderWidth: "2px",
     borderRadius: "9999px",
-    minHeight: "45px",
+    minHeight: "44px",
     minWidth: "160px",
-    paddingLeft: "0.5rem",
-    paddingRight: "1.5rem",
-    fontSize: "1.125rem",
-    fontWeight: "600",
+    paddingLeft: "1rem",
+    paddingRight: "1rem",
+    fontSize: "1rem",
+    fontWeight: "500",
     color: "white",
-    boxShadow: "none",
+    boxShadow: state.isFocused ? "0 0 0 3px rgba(37, 211, 102, 0.1)" : "none",
     cursor: "pointer",
+    transition: "all 0.3s ease",
     "&:hover": {
       borderColor: "#25D366",
+      transform: "translateY(-1px)",
     },
   }),
   singleValue: (base) => ({
     ...base,
     color: "white",
+    fontWeight: "500",
   }),
   dropdownIndicator: (base) => ({
     ...base,
-    color: "white",
+    color: "rgba(255, 255, 255, 0.9)",
     padding: 0,
+    transition: "transform 0.3s ease",
+    "&:hover": {
+      color: "#25D366",
+    },
   }),
   indicatorSeparator: () => ({
     display: "none",
@@ -304,6 +72,9 @@ const customSelectStyles = {
     borderRadius: "12px",
     overflow: "hidden",
     zIndex: 9999,
+    border: "1px solid rgba(255, 255, 255, 0.1)",
+    boxShadow: "0 10px 30px rgba(0, 0, 0, 0.3)",
+    marginTop: "8px",
   }),
   option: (base, state) => ({
     ...base,
@@ -312,7 +83,11 @@ const customSelectStyles = {
     color: state.isFocused || state.isSelected ? "#111" : "#fff",
     cursor: "pointer",
     fontWeight: 500,
-    padding: "10px 12px",
+    padding: "12px 16px",
+    transition: "all 0.2s ease",
+    "&:active": {
+      backgroundColor: "#1da954",
+    },
   }),
 };
 
@@ -337,92 +112,108 @@ const Navbar = ({ languages }) => {
   return (
     <header
       id="main-header"
-      className="bg-[#103928] w-full px-0 py-8 flex items-center shadow-[0_4px_0_0_rgba(255,255,255,0.8)] border-b-2 border-white z-10"
+      className="bg-[#103928] w-full px-0 py-5 flex items-center border-b border-white/10 z-50"
       style={{
-        boxShadow: "0px 4px 10px 0px #000000",
-        position: "relative",
+        boxShadow: "0 4px 20px rgba(0, 0, 0, 0.25)",
+        backdropFilter: "blur(10px)",
       }}
     >
       <div
         className="flex w-full items-center justify-between relative"
         style={{
-          maxWidth: "1920px",
+          maxWidth: "1400px",
           margin: "auto",
-          padding: "0px",
+          padding: "0 1rem",
         }}
       >
-        {/* Logo */}
-        <div className="flex items-center min-w-[120px] pl-6 md:pl-16">
-          <Link to="/">
-            <img
-              src={whatsappLogo}
-              alt="WhatsApp Logo"
-              className="h-8 md:h-12"
-            />
+        {/* Logo with glow effect */}
+        <div className="flex items-center pl-4 md:pl-0">
+          <Link 
+            to="/" 
+            className="group"
+            onClick={() => setMobileMenuOpen(false)}
+          >
+            <div className="relative">
+              <div className="absolute inset-0 bg-[#25D366] rounded-full blur-md opacity-0 group-hover:opacity-30 transition-opacity duration-300"></div>
+              <img
+                src={whatsappLogo}
+                alt="WhatsApp Logo"
+                className="h-9 md:h-11 relative transform transition-transform duration-300 group-hover:scale-105"
+              />
+            </div>
           </Link>
         </div>
 
         {/* Desktop Navigation */}
-        <div
-          className="hidden md:flex justify-end gap-24 w-[60%]"
-          style={{ paddingRight: "4rem" }}
-        >
-          <Link
-            to="/"
-            className="text-white hover:text-[#25D366]"
-            style={navLinkStyle}
-          >
-            {t.Home}
-          </Link>
-          <Link
-            to="/success-stories"
-            className="text-white hover:text-[#25D366]"
-            style={navLinkStyle}
-          >
-            {t.SuccessStories}
-          </Link>
-          <div className="relative w-fit">
-            <Select
-              options={langOptions}
-              value={{ value: selectedLang, label: selectedLang }}
-              onChange={(option) => handleSelectedLangChange(option.value)}
-              styles={customSelectStyles}
-              isSearchable={false}
-            />
+        <div className="hidden md:flex items-center gap-12">
+          <div className="flex items-center gap-12">
+            <Link
+              to="/"
+              className="text-white hover:text-[#25D366] group relative"
+              style={navLinkStyle}
+            >
+              {t.Home}
+              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#25D366] group-hover:w-full transition-all duration-300"></span>
+            </Link>
+            <Link
+              to="/success-stories"
+              className="text-white hover:text-[#25D366] group relative"
+              style={navLinkStyle}
+            >
+              {t.SuccessStories}
+              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#25D366] group-hover:w-full transition-all duration-300"></span>
+            </Link>
+          </div>
+          
+          {/* Language Selector */}
+          <div className="relative">
+            <div className="relative w-fit">
+              <Select
+                options={langOptions}
+                value={{ value: selectedLang, label: selectedLang }}
+                onChange={(option) => handleSelectedLangChange(option.value)}
+                styles={customSelectStyles}
+                isSearchable={false}
+                classNamePrefix="select"
+              />
+            </div>
           </div>
         </div>
 
-        {/* Hamburger Menu */}
+        {/* Modern Hamburger Menu */}
         <button
-          className="md:hidden pr-6"
+          className="md:hidden pr-4 relative w-12 h-12 flex items-center justify-center"
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           aria-label="Toggle menu"
         >
-          <svg
-            width="48"
-            height="48"
-            fill="none"
-            stroke="#fff"
-            strokeWidth="4"
-          >
-            <line x1="8" y1="14" x2="40" y2="14" />
-            <line x1="8" y1="24" x2="40" y2="24" />
-            <line x1="8" y1="34" x2="40" y2="34" />
-          </svg>
+          <div className="relative w-6 h-5">
+            <span className={`absolute left-0 w-full h-0.5 bg-white rounded-full transition-all duration-300 ${mobileMenuOpen ? 'top-1/2 transform -translate-y-1/2 rotate-45' : 'top-0'}`}></span>
+            <span className={`absolute left-0 top-1/2 transform -translate-y-1/2 w-full h-0.5 bg-white rounded-full transition-all duration-300 ${mobileMenuOpen ? 'opacity-0' : 'opacity-100'}`}></span>
+            <span className={`absolute left-0 w-full h-0.5 bg-white rounded-full transition-all duration-300 ${mobileMenuOpen ? 'top-1/2 transform -translate-y-1/2 -rotate-45' : 'bottom-0'}`}></span>
+          </div>
         </button>
 
-        {/* Mobile Menu */}
-        {mobileMenuOpen && (
-          <div
-            className="md:hidden absolute top-full right-0 w-64 max-w-[90vw] bg-[#103928] z-30 flex flex-col py-6 px-6 gap-6 border border-white rounded-b-xl shadow-lg"
-            style={{
-              borderTopLeftRadius: 0,
-              borderTopRightRadius: 0,
-            }}
+        {/* Mobile Menu with slide animation */}
+        <div
+          className={`md:hidden fixed top-0 left-0 w-full h-screen bg-[#103928] z-40 flex flex-col pt-24 px-6 gap-8 transition-transform duration-500 ease-in-out ${
+            mobileMenuOpen ? 'translate-x-0' : 'translate-x-full'
+          }`}
+          style={{
+            boxShadow: "-20px 0 40px rgba(0, 0, 0, 0.3)",
+          }}
+        >
+          <button
+            className="absolute top-8 right-6 text-white text-2xl"
+            onClick={() => setMobileMenuOpen(false)}
+            aria-label="Close menu"
           >
+            ✕
+          </button>
+          
+          <div className="flex flex-col gap-8">
             <Link
               to="/"
-              className="text-white text-lg"
+              className="text-white hover:text-[#25D366] py-3 border-b border-white/10"
               style={navLinkStyleMobile}
               onClick={() => setMobileMenuOpen(false)}
             >
@@ -430,33 +221,45 @@ const Navbar = ({ languages }) => {
             </Link>
             <Link
               to="/success-stories"
-              className="text-white text-lg"
+              className="text-white hover:text-[#25D366] py-3 border-b border-white/10"
               style={navLinkStyleMobile}
               onClick={() => setMobileMenuOpen(false)}
             >
               {t.SuccessStories}
             </Link>
-            <div className="relative w-full">
+            
+            <div className="pt-4">
               <Select
                 options={langOptions}
                 value={{ value: selectedLang, label: selectedLang }}
                 onChange={(option) => {
                   handleSelectedLangChange(option.value);
-                  setMobileMenuOpen(false); // Collapse menu after language selection
+                  setMobileMenuOpen(false);
                 }}
                 onMenuOpen={() => setShowIcon(false)}
                 styles={{
                   ...customSelectStyles,
                   control: (base, state) => ({
                     ...customSelectStyles.control(base, state),
-                    padding: "8px 16px",
-                    fontWeight: 400,
+                    minWidth: "100%",
+                    borderColor: "rgba(255, 255, 255, 0.3)",
                   }),
                 }}
                 isSearchable={false}
               />
             </div>
           </div>
+          
+          {/* Decorative element */}
+          <div className="absolute bottom-8 left-6 right-6 h-px bg-gradient-to-r from-transparent via-white/20 to-transparent"></div>
+        </div>
+        
+        {/* Overlay for mobile menu */}
+        {mobileMenuOpen && (
+          <div
+            className="md:hidden fixed inset-0 bg-black/50 z-30"
+            onClick={() => setMobileMenuOpen(false)}
+          />
         )}
       </div>
     </header>

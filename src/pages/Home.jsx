@@ -5,6 +5,7 @@ import HomePageForm from "../components/HomePageForm";
 import HomeStatsSection from "../components/HomeStatsSection";
 import WhatsappBanner from "../components/WhatsappBanner";
 import AnimatedBusinessText from "../components/AnimatedBusinessText";
+import HomePageFormModal from "../components/HomePageFormModal";
 import { useLanguage } from "../context/LanguageContext";
 import { homePageTranslations } from "../utils/homePageTranslations";
 import styled from "styled-components";
@@ -95,6 +96,23 @@ const Home = () => {
   const t =
     homePageTranslations[selectedLang] || homePageTranslations["English"];
 
+  const [isFormModalOpen, setIsFormModalOpen] = useState(() => {
+    try {
+      return localStorage.getItem("jt_home_form_submitted") !== "true";
+    } catch {
+      return true;
+    }
+  });
+
+  const handleFormSubmitted = () => {
+    try {
+      localStorage.setItem("jt_home_form_submitted", "true");
+    } catch {
+      // ignore storage errors; modal will still close for this session
+    }
+    setIsFormModalOpen(false);
+  };
+
   const ref = useRef();
   const [animate, setAnimate] = useState(false);
   const [animatedOnce, setAnimatedOnce] = useState(false);
@@ -145,6 +163,7 @@ const Home = () => {
 
   return (
     <>
+      <HomePageFormModal open={isFormModalOpen} onSubmitted={handleFormSubmitted} />
       <div className="bg-[#103928] flex flex-col items-center w-full px-2">
         {/* Heading */}
         <div className="mt-16 sm:mt-24 mb-2 w-full flex justify-center">
