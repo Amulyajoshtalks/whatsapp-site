@@ -11,139 +11,150 @@ const Footer = () => {
     homePageTranslations[selectedLang] || homePageTranslations["English"];
 
   return (
-    <footer
-      id="main-footer"
-      className="bg-[#0b3e2e] text-white w-full flex justify-center"
-      style={{
-        height: "clamp(146px, 24vw, 560px)",
-        paddingBottom: "clamp(16px, 4vw, 40px)",
-      }}
-    >
-      <div
-        className="flex flex-row items-start justify-between w-full"
-        style={{
-          width: "100%",
-          maxWidth: "1920px",
-          margin: "clamp(2rem, 3vw, 6rem)",
-          paddingLeft: "clamp(10px, 3vw, 30px)",
-          paddingRight: "clamp(10px, 3vw, 30px)",
-        }}
-      >
-        {/* Left Section */}
-        <div
-          className="flex flex-col gap-4"
-          style={{ width: "clamp(160px, 45vw, 50%)" }}
-        >
-          {/* Logos */}
-          <div className="flex items-center gap-2 md:gap-8 flex-wrap">
-            <img
-              src={whatsappLogo}
-              alt="WhatsApp Logo"
-              style={{ width: "clamp(70px, 12vw, 160px)" }}
-            />
-            <div
-              style={{
-                borderLeft: "2px solid white",
-                height: "clamp(32px, 6vw, 64px)",
-              }}
-            />
-            <img
-              src={joshTalks}
-              alt="Josh Talks"
-              style={{ height: "clamp(32px, 5vw, 56px)", width: "auto" }}
-            />
+    <footer className="bg-[#0b3e2e] text-white w-full py-8 md:py-12 lg:py-16">
+      <div className="container mx-auto px-4 md:px-6 lg:px-8 max-w-7xl">
+        <div className="flex flex-col lg:flex-row justify-between items-start gap-8 lg:gap-12">
+          
+          {/* Brand & Social Section - Left */}
+          <div className="flex-1 max-w-2xl">
+            <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-8 mb-6 md:mb-8">
+              <img
+                src={whatsappLogo}
+                alt="WhatsApp Logo"
+                className="w-32 md:w-40 lg:w-48 h-auto"
+              />
+              <div className="hidden sm:block h-12 w-0.5 bg-white/40"></div>
+              <div className="flex sm:block">
+                <img
+                  src={joshTalks}
+                  alt="Josh Talks"
+                  className="h-8 md:h-10 lg:h-12 w-auto"
+                />
+                <p className="text-sm md:text-base text-white/80 mt-2 sm:mt-4 max-w-md">
+                  Empowering individuals through transformative conversations and resources.
+                </p>
+              </div>
+            </div>
+
+            {/* Social Links */}
+            <div className="flex items-center gap-4 md:gap-6">
+              <span className="text-sm md:text-base font-medium text-white/90">Follow us:</span>
+              <div className="flex gap-3 md:gap-4">
+                {[
+                  {
+                    href: "https://www.instagram.com/joshtalkslive/channel/",
+                    label: "Instagram",
+                    icon: "https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/instagram.svg",
+                  },
+                  {
+                    href: "https://www.linkedin.com/company/joshtalks/",
+                    label: "LinkedIn",
+                    icon: "https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/linkedin.svg",
+                  },
+                  {
+                    href: "https://www.facebook.com/JoshTalksLive/",
+                    label: "Facebook",
+                    icon: "https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/facebook.svg",
+                  },
+                  {
+                    href: "https://twitter.com/JoshTalksLive",
+                    label: "Twitter",
+                    icon: "https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/twitter.svg",
+                  },
+                ].map(({ href, label, icon }) => (
+                  <a
+                    key={label}
+                    href={href}
+                    aria-label={label}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group relative flex items-center justify-center w-10 h-10 md:w-12 md:h-12 rounded-full border border-white/30 bg-white/5 backdrop-blur-sm transition-all duration-300 hover:bg-white/10 hover:scale-110 hover:border-white/60 hover:shadow-lg"
+                  >
+                    <img
+                      src={icon}
+                      alt={label}
+                      className="w-5 h-5 md:w-6 md:h-6 filter invert brightness-0 group-hover:brightness-100 transition-all duration-300"
+                    />
+                    <span className="absolute -top-8 left-1/2 transform -translate-x-1/2 bg-black/90 text-white text-xs px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity duration-200 whitespace-nowrap">
+                      {label}
+                    </span>
+                  </a>
+                ))}
+              </div>
+            </div>
           </div>
 
-          {/* Social Icons */}
-          <div
-            className="flex gap-2 md:gap-8 flex-wrap"
-            style={{
-              marginTop: "clamp(12px, 2vw, 24px)",
-              marginLeft: "clamp(20px, 2vw, 0px)",
-            }}
-          >
-            {[
-              {
-                href: "https://www.instagram.com/joshtalkslive/channel/",
-                label: "Instagram",
-                icon: "https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/instagram.svg",
-              },
-              {
-                href: "https://www.linkedin.com/company/joshtalks/",
-                label: "LinkedIn",
-                icon: "https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/linkedin.svg",
-              },
-              {
-                href: "https://www.facebook.com/JoshTalksLive/",
-                label: "Facebook",
-                icon: "https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/facebook.svg",
-              },
-            ].map(({ href, label, icon }) => (
-              <a
-                key={label}
-                href={href}
-                aria-label={label}
-                className="flex items-center justify-center border-2 border-white rounded-full transition-all duration-300 hover:bg-black"
-                style={{
-                  width: "clamp(24px, 6vw, 80px)",
-                  height: "clamp(24px, 6vw, 80px)",
-                  border: "1px solid white",
-                }}
-              >
-                <img
-                  src={icon}
-                  alt={label}
-                  style={{
-                    width: "clamp(10px, 2.5vw, 40px)",
-                    height: "clamp(10px, 2.5vw, 40px)",
-                    filter: "invert(1)",
-                  }}
-                />
-              </a>
-            ))}
+          {/* Resources Section - Right Aligned */}
+          <div className="w-full lg:w-auto lg:ml-auto">
+            <div className="flex flex-col items-start lg:items-end">
+              <div className="text-left lg:text-right">
+                <h3 className="text-lg md:text-xl font-semibold mb-4 md:mb-6 pb-2 border-b-2 border-[#24D366] inline-block">
+                  {t.Resources || "Resources"}
+                </h3>
+                <ul className="space-y-3 md:space-y-4">
+                  <li>
+                    <Link
+                      to="/success-stories"
+                      className="group inline-flex items-center justify-end text-white/80 hover:text-white transition-all duration-300 text-base md:text-lg lg:flex-row-reverse"
+                    >
+                      <span className="w-0 group-hover:w-2 h-0.5 bg-[#24D366] ml-0 group-hover:ml-2 transition-all duration-300 lg:mr-0 lg:group-hover:mr-2"></span>
+                      {t.SuccessStories || "Success Stories"}
+                    </Link>
+                  </li>
+                  {/* Uncomment these if you need more links */}
+                  {/* 
+                  <li>
+                    <Link
+                      to="/blog"
+                      className="group inline-flex items-center justify-end text-white/80 hover:text-white transition-all duration-300 text-base md:text-lg lg:flex-row-reverse"
+                    >
+                      <span className="w-0 group-hover:w-2 h-0.5 bg-[#24D366] ml-0 group-hover:ml-2 transition-all duration-300 lg:mr-0 lg:group-hover:mr-2"></span>
+                      Blog & Articles
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      to="/webinars"
+                      className="group inline-flex items-center justify-end text-white/80 hover:text-white transition-all duration-300 text-base md:text-lg lg:flex-row-reverse"
+                    >
+                      <span className="w-0 group-hover:w-2 h-0.5 bg-[#24D366] ml-0 group-hover:ml-2 transition-all duration-300 lg:mr-0 lg:group-hover:mr-2"></span>
+                      Webinars
+                    </Link>
+                  </li>
+                  */}
+                </ul>
+              </div>
+              
+              {/* Optional: Add contact info aligned to right */}
+              {/* <div className="mt-6 lg:mt-8 lg:text-right hidden lg:block">
+                <p className="text-white/60 text-sm mb-2">Need help?</p>
+                <a 
+                  href="mailto:contact@joshtalks.com" 
+                  className="text-white/80 hover:text-white transition-colors duration-300 text-base"
+                >
+                  contact@joshtalks.com
+                </a>
+              </div> */}
+            </div>
           </div>
         </div>
 
-        {/* Right Section */}
-        <div
-          className="flex flex-col gap-2"
-          style={{
-            // width: "clamp(140px, 31vw, 16%)",
-            marginTop: 0,
-            marginLeft: "30px",
-          }}
-        >
-          <Link
-            to="/success-stories"
-            style={{
-              fontFamily: "Helvetica Neue",
-              fontWeight: 400,
-              fontSize: "clamp(12px, 2vw, 24px)",
-              lineHeight: "100%",
-              color: "#fff",
-              borderBottom: "2px solid #24D366",
-              paddingBottom: "clamp(2px, 0.5vw, 4px)",
-              width: "fit-content",
-              background: "none",
-              marginBottom: "clamp(8px, 2vw, 12px)",
-            }}
-          >
-            {t.Resources || "Resources"}
-          </Link>
-
-          <Link
-            to="/success-stories"
-            style={{
-              fontFamily: "Helvetica Neue",
-              fontWeight: 400,
-              fontSize: "clamp(12px, 2vw, 24px)",
-              lineHeight: "100%",
-              color: "#fff",
-              width: "fit-content",
-            }}
-          >
-            {t.SuccessStories}
-          </Link>
+        {/* Bottom Bar */}
+        <div className="mt-8 md:mt-12 pt-6 md:pt-8 border-t border-white/20">
+          <div className="flex flex-col md:flex-row justify-center items-center gap-4">
+            <p className="text-sm md:text-base text-white/60">
+              © {new Date().getFullYear()} Josh Talks. All rights reserved.
+            </p>
+            {/* Mobile contact info */}
+            <div className="flex lg:hidden items-center gap-4 text-sm md:text-base text-white/60">
+              <a 
+                href="mailto:contact@joshtalks.com" 
+                className="hover:text-white transition-colors duration-300"
+              >
+                contact@joshtalks.com
+              </a>
+            </div>
+          </div>
         </div>
       </div>
     </footer>

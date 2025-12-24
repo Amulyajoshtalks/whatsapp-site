@@ -12,7 +12,7 @@ const VideoPlayerPage = () => {
     window.scrollTo(0, 0);
     const footerElement = document.getElementById("main-footer");
     if (footerElement) {
-      footerElement.classList.add("!hidden");
+      footerElement.classList.remove("!hidden");
     }
   }, []);
 

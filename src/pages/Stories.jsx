@@ -38,16 +38,28 @@ const Stories = () => {
 
   // If user came from Home slider, auto-open the matching success story (serial-wise).
   useEffect(() => {
+    const autoOpenId = location.state?.autoOpenId;
     const autoOpenIndex = location.state?.autoOpenIndex;
     if (autoOpenedRef.current) return;
-    if (autoOpenIndex === undefined || autoOpenIndex === null) return;
 
     const items =
       translations[selectedLang]?.items || translations["English"].items || [];
     if (!items.length) return;
 
-    const safeIndex = Math.max(0, Math.min(Number(autoOpenIndex) || 0, items.length - 1));
-    const video = items[safeIndex];
+    let video = null;
+
+    if (autoOpenId) {
+      video = items.find((it) => it.id === autoOpenId) || null;
+    } else if (autoOpenIndex !== undefined && autoOpenIndex !== null) {
+      const safeIndex = Math.max(
+        0,
+        Math.min(Number(autoOpenIndex) || 0, items.length - 1)
+      );
+      video = items[safeIndex];
+    } else {
+      return;
+    }
+
     if (!video) return;
 
     autoOpenedRef.current = true;

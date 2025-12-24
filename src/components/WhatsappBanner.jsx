@@ -335,10 +335,12 @@
 
 
 import { useEffect, useRef, useState } from "react";
-import MontageCover from "../assets/MontageCover.png";
 import { useAudio } from "../context/AudioContext";
 import { useLanguage } from "../context/LanguageContext";
 import { homePageTranslations } from "../utils/homePageTranslations";
+
+const HOMEPAGE_VIDEO_THUMBNAIL =
+  "https://storage.googleapis.com/staging.joshtalks-ias.appspot.com/thumbnail.webp";
 
 const WhatsappBanner = () => {
   const { selectedLang } = useLanguage();
@@ -491,29 +493,15 @@ const WhatsappBanner = () => {
       {!isStarted || isEnded ? (
         <>
           <img
-            src={MontageCover}
+            src={HOMEPAGE_VIDEO_THUMBNAIL}
             alt="Whatsapp Banner"
             className="w-full h-[200px] xs:h-[300px] sm:h-[400px] md:h-[480px] lg:h-[680px] xl:h-[680px] object-cover"
             loading="eager"
             decoding="async"
-            fetchpriority="high"
+            fetchPriority="high"
             style={{ aspectRatio: "2.35/1" }}
           />
-          <div className="absolute inset-0 bg-black/35" />
-          <h2
-            className="absolute inset-0 flex items-center justify-center text-white text-lg xs:text-xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-normal"
-            style={{
-              textShadow: "0 2px 16px rgba(0,0,0,0.5)",
-              fontFamily: "Helvetica Neue, Helvetica, Arial, sans-serif",
-            }}
-          >
-            {selectedLang === "English" && <>All through <span className="text-[#25D366] font-bold ml-2 sm:ml-3">WhatsApp</span></>}
-            {selectedLang === "हिंदी" && <><span className="text-[#25D366] font-bold mr-2 sm:mr-3">WhatsApp</span> के साथ</>}
-            {selectedLang === "ગુજરાતી" && <>બદા <span className="text-[#25D366] font-bold ml-2 sm:ml-3">WhatsApp</span> દ્વારા</>}
-            {selectedLang === "বাংলা" && <><span className="text-[#25D366] font-bold mr-2 sm:mr-3">WhatsApp</span> এর মাধ্যমে</>}
-            {selectedLang === "தமிழ்" && <><span className="text-[#25D366] font-bold mr-2 sm:mr-3">WhatsApp</span> மூலம் எல்லாம்</>}
-            {selectedLang === "मराठी" && <>सर्व काही <span className="text-[#25D366] font-bold ml-2 sm:ml-3">WhatsApp</span></>}
-          </h2>
+          <div className="absolute inset-0 bg-black/25" />
           {showIcon && (
             <button
               onClick={handlePlay}
@@ -536,7 +524,7 @@ const WhatsappBanner = () => {
             muted={false}
             playsInline
             preload="metadata"
-            poster={MontageCover}
+            poster={HOMEPAGE_VIDEO_THUMBNAIL}
             className="w-full h-[200px] xs:h-[300px] sm:h-[400px] md:h-[480px] lg:h-[680px] xl:h-[680px] object-fill"
             style={{ aspectRatio: "2.35/1", cursor: "pointer" }}
             onClick={togglePlayback}

@@ -172,8 +172,25 @@ const HomeStatsSection = () => {
     homePageTranslations[selectedLang] || homePageTranslations["English"];
   const [hovered, setHovered] = useState("");
 
+  // Home slider → Success Stories mapping (serial-wise)
+  // Tab 1 - Truffle tangles by ILA            -> truffleTangles
+  // Tab 2 - Singh's Foto by Shaan             -> singhsPhotoByShaan
+  // Tab 3 - Singh's Foto by Shaan             -> singhsPhotoByShaan
+  // Tab 4 - Savvytree                         -> savvyTree
+  // Tab 5 - Travel Connection                 -> travelConnection
+  // Tab 6 - Mondello Domani                   -> modelloDomani
+  const storyIdBySlide = [
+    "truffleTangles",
+    "singhsPhotoByShaan",
+    "singhsPhotoByShaan",
+    "savvyTree",
+    "travelConnection",
+    "modelloDomani",
+  ];
+
   const handleSlideClick = (index) => {
-    navigate("/success-stories", { state: { autoOpenIndex: index } });
+    const storyId = storyIdBySlide[index];
+    navigate("/success-stories", { state: { autoOpenId: storyId } });
   };
 
   const next = () => {

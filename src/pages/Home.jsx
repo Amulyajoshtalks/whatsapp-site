@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import AnimatedText from "../components/AnimatedText";
 import DelayAnimationImages from "../components/DelayAnimationImages";
-import HomePageForm from "../components/HomePageForm";
+// import HomePageForm from "../components/HomePageForm";
 import HomeStatsSection from "../components/HomeStatsSection";
 import WhatsappBanner from "../components/WhatsappBanner";
 import AnimatedBusinessText from "../components/AnimatedBusinessText";
@@ -216,7 +216,7 @@ const Home = () => {
         </div>
       </div>
       <HomeStatsSection />
-      <HomePageForm />
+      {/* <HomePageForm /> */}
       <ResponsiveContainer>
         <div className="w-full md:w-1/2 flex flex-col items-center md:items-start text-center md:text-left">
           <AnimatedBusinessText />
