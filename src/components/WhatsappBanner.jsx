@@ -340,7 +340,7 @@ import { useLanguage } from "../context/LanguageContext";
 import { homePageTranslations } from "../utils/homePageTranslations";
 
 const HOMEPAGE_VIDEO_THUMBNAIL =
-  "https://storage.googleapis.com/staging.joshtalks-ias.appspot.com/thumbnail.webp";
+  "https://storage.googleapis.com/joshtalks-ias.appspot.com/image_data/wp_thumbnail.jpg";
 
 const WhatsappBanner = () => {
   const { selectedLang } = useLanguage();

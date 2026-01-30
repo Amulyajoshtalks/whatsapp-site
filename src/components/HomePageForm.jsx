@@ -74,6 +74,14 @@ const HomePageForm = ({
   const businessDescriptionRef = useRef(null);
   const challengesRef = useRef(null);
 
+
+  const trackMetaEvent = (eventName, params = {}) => {
+    if (typeof window !== "undefined" && typeof window.fbq === "function") {
+      window.fbq("track", eventName, params);
+    }
+  };
+  
+
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
     if (name === "phone") {
@@ -138,6 +146,8 @@ const HomePageForm = ({
   };
 
   const handleSubmit = async (e) => {
+    trackMetaEvent("InitiateCheckout");
+
     e.preventDefault();
     if (isSubmitting) return;
 
@@ -222,7 +232,11 @@ const HomePageForm = ({
         source,
         page_url: typeof window !== "undefined" ? window.location.href : null,
       });
-
+      trackMetaEvent("Lead", {
+        content_name: "WhatsApp Business Partner Form",
+        source: source,
+        language: selectedLang,
+      });
       toast.success(
         "Submitted",
         "Thanks! A Meta Verified Partner will reach out to you soon."

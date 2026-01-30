@@ -32,7 +32,7 @@ export const homePageTranslations = {
         DescribeHere: "Describe here",
         allThrough: 'All Through',
         whatsApp: "WhatsApp",
-        video: "https://storage.googleapis.com/staging.joshtalks-ias.appspot.com/wab-montage-standard.mp4"
+        video: "https://storage.googleapis.com/joshtalks-ias.appspot.com/image_data/wab-hin.mp4"
     },
 
     हिंदी: {
@@ -68,7 +68,7 @@ export const homePageTranslations = {
         DescribeHere: "यहाँ वर्णन करें",
         allThrough: 'ऑल थ्रू',
         whatsApp: "WhatsApp",
-        video: "https://storage.googleapis.com/staging.joshtalks-ias.appspot.com/wab-montage-hindi.mp4"
+        video: "https://storage.googleapis.com/joshtalks-ias.appspot.com/image_data/wab-hin.mp4"
     },
 
     मराठी: {
@@ -104,7 +104,7 @@ export const homePageTranslations = {
         DescribeHere: "येथे वर्णन करा",
         allThrough: "सर्व काही",
         whatsApp: "WhatsApp",
-        video: "https://storage.googleapis.com/staging.joshtalks-ias.appspot.com/wab-montage-marathi.mp4"
+        video: "https://storage.googleapis.com/joshtalks-ias.appspot.com/image_data/wab-marathi.mp4"
     },
 
     বাংলা: {
@@ -140,7 +140,7 @@ export const homePageTranslations = {
         DescribeHere: "এখানে বর্ণনা করুন",
         allThrough: "অল থ্রু",
         whatsApp: "WhatsApp",
-        video: "https://storage.googleapis.com/staging.joshtalks-ias.appspot.com/wab-montage-bengali.mp4"
+        video: "https://storage.googleapis.com/joshtalks-ias.appspot.com/image_data/wab-bengali.mp4"
     },
 
     தமிழ்: {
@@ -176,7 +176,7 @@ export const homePageTranslations = {
         DescribeHere: "இங்கே விவரிக்கவும்",
         allThrough: "ஆல் த்ரூ",
         whatsApp: "வாட்ஸ் ஆப்",
-        video: "https://storage.googleapis.com/staging.joshtalks-ias.appspot.com/wab-montage-tamil.mp4"
+        video: "https://storage.googleapis.com/joshtalks-ias.appspot.com/wab-tamil.mp4"
     },
     ગુજરાતી: {
         Home: "હોમ",
@@ -211,6 +211,6 @@ export const homePageTranslations = {
         DescribeHere: "અહીં વર્ણન કરો",
         allThrough: "ઓલ થ્રુ",
         whatsApp: "WhatsApp",
-        video: "https://storage.googleapis.com/staging.joshtalks-ias.appspot.com/wab-montage-gujarati.mp4"
+        video: "https://storage.googleapis.com/joshtalks-ias.appspot.com/image_data/wab-guj.mp4"
     }
 };
