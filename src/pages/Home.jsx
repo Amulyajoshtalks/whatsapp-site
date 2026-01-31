@@ -116,7 +116,7 @@ const Home = () => {
   const ref = useRef();
   const [animate, setAnimate] = useState(false);
   const [animatedOnce, setAnimatedOnce] = useState(false);
-
+    console.log(animate)
   useEffect(() => {
     const headerElement = document.getElementById("main-header");
     if (headerElement) {
@@ -145,7 +145,7 @@ const Home = () => {
   const [showOnScroll, setShowOnScroll] = useState(false);
   const [shownOnce, setShownOnce] = useState(false);
   const sectionRef = useRef();
-
+  console.log(showOnScroll)
   useEffect(() => {
     const handleScroll = () => {
       if (!sectionRef.current || shownOnce) return;

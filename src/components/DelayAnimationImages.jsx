@@ -267,7 +267,7 @@ const DelayAnimationImages = () => {
   const [showBadge, setShowBadge] = useState(false);
   const [showProduct, setShowProduct] = useState(false);
   const [showChat, setShowChat] = useState(false);
-  const { selectedLang } = useLanguage();
+  // const { selectedLang } = useLanguage();
 
   useEffect(() => {
     const observer = new window.IntersectionObserver(

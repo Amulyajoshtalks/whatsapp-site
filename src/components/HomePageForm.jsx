@@ -274,10 +274,10 @@ const HomePageForm = ({
       errors[field] ? "border-red-500" : "border-[#00000066]"
     }`;
 
-  const inputClassCheckBox = (field) =>
-    `w-full border px-5 bg-white text-black caret-black placeholder:text-gray-500 text-[clamp(16px,2vw,22px)] focus:outline-none focus:ring-0 ${
-      errors[field] ? "border-red-500" : "border-[#00000066]"
-    }`;
+  // const inputClassCheckBox = (field) =>
+  //   `w-full border px-5 bg-white text-black caret-black placeholder:text-gray-500 text-[clamp(16px,2vw,22px)] focus:outline-none focus:ring-0 ${
+  //     errors[field] ? "border-red-500" : "border-[#00000066]"
+  //   }`;
 
   const FORM_HEADER =
     "Connect with a Meta Verified Partner to Start Your WhatsApp for Business Journey Today";
