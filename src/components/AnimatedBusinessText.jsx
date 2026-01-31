@@ -45,7 +45,7 @@ const AnimatedBusinessText = () => {
                 fontFamily: "Helvetica Neue",
                 fontWeight: 400,
                 // fontSize: "clamp(20px, 4vw, 40px)",
-                fontSize: (selectedLang == "தமிழ்") ? "clamp(20px, 4vw, 38px)" : "clamp(20px, 4vw, 40px)",
+                fontSize: (selectedLang === "தமிழ்") ? "clamp(20px, 4vw, 38px)" : "clamp(20px, 4vw, 40px)",
                 color: "#111",
                 display: "block",
                 // marginBottom: "12px",
