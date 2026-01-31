@@ -126,7 +126,7 @@ const AnimatedText = () => {
       timeout = setTimeout(() => setPhase("visible"), ANIMATION_TIME);
     }
     return () => clearTimeout(timeout);
-  }, [phase]);
+  }, [phase,PHRASES.length]);
 
   return (
     <Wrapper>

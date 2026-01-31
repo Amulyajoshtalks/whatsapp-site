@@ -4,7 +4,7 @@ import Catalogue from "../assets/Catalogue.svg";
 import Shoedoctorlogo from "../assets/Shoedoctorlogo.svg";
 import ShoeDoctorMain from "../assets/ShoeDoctorMain.jpg";
 import whatsappBubble from "../assets/whatsappBubble.svg";
-import { useLanguage } from "../context/LanguageContext";
+
 
 const StyledImage = styled.img`
   object-fit: cover;
