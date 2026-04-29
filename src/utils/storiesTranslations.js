@@ -436,7 +436,7 @@ export const translations = {
         url: ASSETS_PATHS.tamilVideos.truffleTangles,
         title: "Truffle tangles by ILA",
         location: "Gurugram, Haryana",
-        tagline: "வீட்டில் தயாரிக்கப்பட்ட விருந்துகள் முதல் தடையற்ற ஆன்லைன் விற்பனை வரை - வீட்டிலிருந்து வேலை செய்யும் தொழில்முனைவோருக்கு WhatsApp Business உதவியது, இலா ஒரு மாதத்திற்கு 80–100 பிறந்தநாள் கேக்குகளை விற்பனை செய்கிறார்.",
+        tagline: "வீட்டில் செய்யும் சிறிய உணவுப் பொருட்களிலிருந்து ஆன்லைனில் எளிதாக விற்பனை — இலா, WhatsApp Business மூலம் வீட்டிலிருந்து பணிபுரிந்து மாதம் 80–100 பிறந்த நாள் கேக்குகளை விற்பனை செய்கிறார்.",
         category: "tools",
         poster: ASSETS_PATHS.truffleTanglesImg,
         backToSuccessStories: "முந்தைய பக்கம்"
@@ -446,7 +446,7 @@ export const translations = {
         url: ASSETS_PATHS.tamilVideos.shoeDoctor,
         title: "Shoe Doctor",
         location: "Uttam Nagar, New Delhi",
-        tagline: "தேய்ந்து போன உள்ளங்கால்கள் முதல் மீட்டெடுக்கப்பட்ட படிகள் வரை— இந்தியாவின் SMB-களுக்காக வடிவமைக்கப்பட்ட WhatsApp Business-இன் மலிவு விலை டிஜிட்டல் கருவிகளைப் பயன்படுத்தி அனுஜ் & அஜித்தின் வணிக சேவை விற்பனை 75% அதிகரித்துள்ளது.",
+        tagline: "தேய்ந்து போன உள்ளங்கால்கள் முதல் மீட்டெடுக்கப்பட்ட பாதைகள் வரை— இந்தியாவின் SMB-களுக்காக வடிவமைக்கப்பட்ட WhatsApp Business-இன் மலிவு விலை டிஜிட்டல் கருவிகளைப் பயன்படுத்தி அனுஜ் & அஜித்தின் வணிக சேவை விற்பனை 75% அதிகரித்துள்ளது.",
         category: "ads",
         poster: ASSETS_PATHS.shoeDoctorImg,
         backToSuccessStories: "முந்தைய பக்கம்"
@@ -456,7 +456,7 @@ export const translations = {
         url: ASSETS_PATHS.tamilVideos.savvyTree,
         title: "Savvytree",
         location: "Chhatarpur, New Delhi",
-        tagline: "அரட்டைகள் முதல் மாற்றங்கள் வரை - WhatsApp விளம்பர உத்திகளைப் பயன்படுத்தி உயர்நிலை வணிகங்களுக்கான டிஜிட்டல் மார்க்கெட்டிங் முடிவுகளை தான்யா, பாரத் மற்றும் சிராக் 10-15% மேம்படுத்தினர்.",
+        tagline: "அரட்டைகள் முதல் மாற்றங்கள் வரை — டான்யா, பாரத் & சிராக், WhatsApp விளம்பர தந்திரங்களைப் பயன்படுத்தி உயர் தர வியாபாரங்களுக்கான டிஜிட்டல் மார்க்கெட்டிங் முடிவுகளை 10–15% வரை மேம்படுத்தினர்.",
         category: "ads",
         poster: ASSETS_PATHS.savvyTreeImg,
         backToSuccessStories: "முந்தைய பக்கம்"
@@ -466,7 +466,7 @@ export const translations = {
         url: ASSETS_PATHS.tamilVideos.singhsPhotoByShaan,
         title: "Singh's Foto by Shaan",
         location: "Varanasi",
-        tagline: "திருமணத்திற்கு முந்தைய சிறிய படப்பிடிப்புகள் முதல் பிரமாண்டமான நிகழ்வுகள் வரை - WhatsApp Business வாடிக்கையாளர் தொடர்பு கருவிகளைப் பயன்படுத்தி ஷான் சேவை முன்பதிவுகளை 50-60% அதிகரித்தார்.",
+        tagline: "சிறிய ஷூட்டிங்கில் இருந்து பிரமாண்ட நிகழ்வுகள் வரை — ஷான், WhatsApp Business வாடிக்கையாளர் தொடர்பு சேவை கருவிகளைப் பயன்படுத்தி, சேவை முன்பதிவுகளை 50–60% வரை அதிகரித்தார்.",
         category: "tools",
         poster: ASSETS_PATHS.singhsPhotoByShaanImg,
         backToSuccessStories: "முந்தைய பக்கம்"
@@ -476,7 +476,7 @@ export const translations = {
         url: ASSETS_PATHS.tamilVideos.celebrationCompany,
         title: "The Celebration Company",
         location: "Varanasi",
-        tagline: "முதல் வாழ்த்து முதல் கைதட்டல் வரை—WhatsApp Business ஹனியின் வணிக விற்பனையை 60-70% அதிகரிக்க உதவியது.",
+        tagline: "முதல் வாழ்த்துகளிலிருந்து பாராட்டுகள் மழை வரை – ஹனி, வணிக விற்பனை 60–70% அதிகரித்தது WhatsApp Business உதவியுடன்!",
         category: "tools",
         poster: ASSETS_PATHS.celebrationCompanyImg,
         backToSuccessStories: "முந்தைய பக்கம்"
@@ -486,7 +486,7 @@ export const translations = {
         url: ASSETS_PATHS.tamilVideos.travelConnection,
         title: "Travel Connection",
         location: "Dabri, New Delhi",
-        tagline: "கனவுப் பயணங்கள் முதல் விரைவான முன்பதிவுகள் வரை—வணிகத் தொடர்புக்காக WhatsApp பைப் பயன்படுத்தி 8 மாதங்களில் ஹர்ப்ரீத் மற்றும் ஹிமான்ஷு 1,744+ வணிக முன்னணிகளைப் பெற்றனர்.",
+        tagline: "கனவு பயணங்களிலிருந்து முன்பதிவுகள் வரை – ஹர்ப்ரீத் & ஹிமாஷு 8 மாதங்களில் 1,744+ வணிக முன்னோட்டங்களைப் பெற்றனர், WhatsApp Business உதவியுடன்!",
         category: "ads",
         poster: ASSETS_PATHS.travelConnectionImg,
         backToSuccessStories: "முந்தைய பக்கம்"
@@ -516,25 +516,25 @@ export const translations = {
         url: ASSETS_PATHS.tamilVideos.modelloDomani,
         title: "Mondello Domani",
         location: "Lajpat Nagar, New Delhi",
-        tagline: "ஆயுஷ் WhatsApp Business மூலம் இந்திய கைவினைத்திறனை உலகளவில் கொண்டு வந்தார் - ஆன்லைன் பட்டியல் விளம்பரம் மூலம் விற்பனையை 25% அதிகரித்தது.",
+        tagline: "ஆயுஷ் WhatsApp Business மூலம் இந்திய கைவினைத்திறனை உலகளவில் கொண்டு சென்றார் - ஆன்லைன் பட்டியல் விளம்பரம் மூலம் விற்பனையை 25% அதிகரித்தது.",
         category: "tools",
         poster: ASSETS_PATHS.modelloDomaniImg,
         backToSuccessStories: "முந்தைய பக்கம்"
       },
     ],
-    bannerHeading: `இந்தியா முழுவதும் சேவை வழங்குநர்கள் </br> மற்றும் டிஜிட்டல் கடைகளை மேம்படுத்துதல்`,
-    bannerText: `கிளிக் டு WhatsApp 
+    bannerHeading: `இந்தியா முழுவதும்! <br/> டிஜிட்டல் வியாபார வளர்ச்சி!`,
+    bannerText: `WhatsApp Business வளர்ச்சியை எளிதில் கொண்டு வருகிறது <br/>
+      WhatsApp-க்கு நேரடியாக கிளிக் செய்யும் 
       <span class="underline decoration-[#00D084] underline-offset-4">விளம்பரங்கள்</span>, 
-      <span class="underline decoration-[#00D084] underline-offset-4">பட்டியல்கள்</span>, மற்றும் 
-      <span class="underline decoration-[#00D084] underline-offset-4">லேபிள்கள்</span></br>
-      போன்ற கருவிகள் மூலம் WhatsApp Business வளர்ச்சியை எட்டக்கூடியதாக ஆக்குகிறது - இப்போது 
-      <span class="underline decoration-[#00D084] underline-offset-4">Meta வெரிஃபைட்டின்</span> கூடுதல் நம்பிக்கையுடன்.`,
+      <span class="underline decoration-[#00D084] underline-offset-4">பொருட்கள் பட்டியல்</span>, மற்றும் 
+      <span class="underline decoration-[#00D084] underline-offset-4">லேபல்கள்</span> போன்ற கருவிகளின் மூலம், இப்போது 
+      <span class="underline decoration-[#00D084] underline-offset-4">Meta Verified</span> நம்பகத்தன்மையுடன்.`,
     filterOptions: [
       { label: "அனைத்தும்", value: "all" },
       { label: "ஆட்ஸ் தட் க்ளிக் டூ WhatsApp", value: "ads" },
       { label: "WhatsApp Business டூல்", value: "tools" },
     ],
-    successStoriesTitle: "வெற்றி கதைகளை ஆராயவும்"
+    successStoriesTitle: "வெற்றி கதைகள் உங்களுக்காக!"
   },
   ગુજરાતી: {
     items: [

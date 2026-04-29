@@ -11,6 +11,7 @@ const AnimatedBusinessText = () => {
   const { selectedLang } = useLanguage();
   const t =
     homePageTranslations[selectedLang] || homePageTranslations["English"];
+  const hasWithWhatsApp = Boolean(t.WithWhatsApp?.trim());
 
   useEffect(() => {
     const onScroll = () => {
@@ -62,7 +63,7 @@ const AnimatedBusinessText = () => {
                           ))}
             </span>
           )}
-          {showWithWA && (
+          {showWithWA && hasWithWhatsApp && (
             <span
               style={{
                 fontFamily: "Helvetica Neue, Helvetica, Arial, sans-serif",

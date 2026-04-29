@@ -95,6 +95,8 @@ const Home = () => {
   const { selectedLang } = useLanguage();
   const t =
     homePageTranslations[selectedLang] || homePageTranslations["English"];
+  const hasBusinessAppLink =
+    Boolean(t.WhatsAppBusinessApp?.trim()) || Boolean(t.page?.trim());
 
   const [isFormModalOpen, setIsFormModalOpen] = useState(() => {
     try {
@@ -232,9 +234,15 @@ const Home = () => {
           <br />
           <ResponsiveInnerParagraph>
             {t.FullFeatureDetails}
-            <br />
-            <span style={{ color: "#25D366" }}>WhatsApp Business app</span>
-            <span style={{ color: "#111" }}> {t.page}</span>
+            {hasBusinessAppLink && (
+              <>
+                <br />
+                {t.WhatsAppBusinessApp?.trim() && (
+                  <span style={{ color: "#25D366" }}>{t.WhatsAppBusinessApp}</span>
+                )}
+                {t.page?.trim() && <span style={{ color: "#111" }}> {t.page}</span>}
+              </>
+            )}
           </ResponsiveInnerParagraph>
 
           <div className="flex gap-4 mt-6">
